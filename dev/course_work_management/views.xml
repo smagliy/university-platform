@@ -1,0 +1,54 @@
+<!-- course_work_management/views.xml -->
+
+<odoo>
+    <data>
+        <!-- Define the view for the course work form -->
+        <record model="ir.ui.view" id="view_course_work_form">
+            <field name="name">course.work.form</field>
+            <field name="model">course.work</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="name"/>
+                        <field name="surname"/>
+                        <field name="course_work_name"/>
+                        <field name="date"/>
+                        <field name="estimate"/>
+                        <field name="degree_type"/>
+                        <field name="number_course"/>
+                        <!-- Add other fields as needed -->
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <!-- Define the tree view for the course work -->
+        <record model="ir.ui.view" id="view_course_work_tree">
+            <field name="name">course.work.tree</field>
+            <field name="model">course.work</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="surname"/>
+                    <field name="course_work_name"/>
+                    <field name="date"/>
+                    <field name="estimate"/>
+                    <field name="degree_type"/>
+                    <field name="number_course"/>
+                    <!-- Add other fields as needed -->
+                </tree>
+            </field>
+        </record>
+
+        <!-- Define the action for the course work -->
+        <record model="ir.actions.act_window" id="action_course_work">
+            <field name="name">Course Work</field>
+            <field name="res_model">course.work</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- Define the menu item for the course work -->
+        <menuitem id="menu_course_work" name="Course Work" parent="base.menu_main" action="action_course_work"/>
+    </data>
+</odoo>
+
